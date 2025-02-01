@@ -2,7 +2,7 @@
 
 If an application tries to write to a pipe without using an application level buffer, the write will block.
 
-In this program I start `main.cpp` with a full stdout buffer and an empty stderr buffer. Because `fprintf()` automatically buffers writes to stdout, `main.cpp` does not block and the extra data is held within the program. When the pipe is read from python, we can see that a single line for the buffer was larger than the buff size:
+In this program I start `main.cpp` with a full stdout buffer and an empty stderr buffer. Because `fprintf()` automatically buffers writes to stdout, `main.cpp` does not block and the extra data is held within the program. When the pipe is read from python, we can see that a single line from the buffer was larger than the buff size:
 
 ```
 peter@chronos:~/Documents/personalProjects/pipes$ python3.12 full_stdout.py
